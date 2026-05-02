@@ -14,10 +14,11 @@
                 <uiIconPath>DiagonalRim/Floors/PavedTile/MenuIcon</uiIconPath>
 
         <costList>
-      <Steel>1</Steel>
+      <ConcreteResource>2</ConcreteResource>
+      <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <researchPrerequisites>
-      <li>Stonecutting</li>
+      <li>Concrete_floor_C1</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -57,7 +58,7 @@
     </graphicData>
     <uiIconPath>DiagonalRim/Floors/GenericTile/SteelTile/MenuIcon</uiIconPath>
         <costList>
-      <Steel>4</Steel>
+      <SteelBar>4</SteelBar>
     </costList>
   </ThingDef>  
 
@@ -74,7 +75,7 @@
     </graphicData>
         <uiIconPath>DiagonalRim/Floors/GenericTile/SilverTile/MenuIcon</uiIconPath>
         <costList>
-      <Silver>35</Silver>
+      <SilverBar>35</SilverBar>
     </costList>
   </ThingDef>
 
@@ -91,7 +92,7 @@
     </graphicData>
         <uiIconPath>DiagonalRim/Floors/GenericTile/GoldTile/MenuIcon</uiIconPath>
         <costList>
-      <Gold>35</Gold>
+      <GoldBar>35</GoldBar>
     </costList>
   </ThingDef>
   

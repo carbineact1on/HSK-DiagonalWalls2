@@ -373,6 +373,9 @@
       </li>
     </colorPerStuff>
     <costStuffCount>5</costStuffCount>
+    <costList>
+      <SandResource>3</SandResource>
+    </costList>
     <filthLeaving>SandbagRubble</filthLeaving>
     <rotatable>false</rotatable>
     <selectable>true</selectable>

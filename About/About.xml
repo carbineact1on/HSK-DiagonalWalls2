@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Diagonal Walls 2 (HSK Patched)</name>
+  <author>Chevreau - HSK conversion by CarbineAction</author>
+  <supportedVersions>
+    <li>1.5</li>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>carbineaction.diagonalwalls2.hsk</packageId>
+  <description>
+All-in-one HSK-balanced fork of Diagonal Walls 2 by Chevreau. Diagonal walls, embrasures, floors, fences, sandbags, and conduits — all rebalanced to match HSK's vanilla wall pattern.
+
+Conversions applied to match HSK Core_SK Buildings_Walls.xml pattern:
+
+WALLS (DiagonalWallBase):
+- MaxHitPoints 300 → 350 (HSK wall convention)
+- WorkToBuild 135 → 350 (HSK wall convention)
+- costStuffCount 5 → 6 (HSK wall convention)
+
+EMBRASURES (chv_DiagonalWalls_Embrasures):
+- Same as walls — HitPoints 350, WorkToBuild 350, costStuffCount 6
+
+SANDBAGS (DiagonalSandbags):
+- Matches HSK vanilla Sandbag pattern (WorkToBuild 80, costStuffCount 6)
+
+FENCES (DiagonalFence, ConnectorFenceL/R):
+- Matches HSK vanilla Fence pattern (WorkToBuild 50, costStuffCount 1)
+
+CONDUIT (diagonalConduit):
+- Matches HSK vanilla PowerConduit pattern (Steel 1)
+
+FLOORS:
+- Cost matches HSK vanilla equivalents (stone tile, plank, generic tile)
+
+Drop-in replacement — incompatibleWith upstream so they can't double-load.
+Switch back to upstream Workshop version when not playing HSK.
+
+Credit to Chevreau for the original mod.
+  </description>
+  <incompatibleWith>
+    <li>chv.DiagonalWalls2</li>
+  </incompatibleWith>
+</ModMetaData>

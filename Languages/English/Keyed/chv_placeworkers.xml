@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <chvFertility10>Must place on terrain with at least than 10% fertility.</chvFertility10>
+    <chvFertility70>Must place on terrain with at least 70% fertility.</chvFertility70>
+    <chvFertility100>Must place on terrain with at least 100% fertility.</chvFertility100>
+    <chvFertility140>Must place on terrain with at least 140% fertility.</chvFertility140>
+</LanguageData>

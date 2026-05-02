@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DiagonalWallBase" Name="DiagonalEmbrasureBase" Abstract="True">
+    <statBases>
+      <MaxHitPoints>480</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+    </statBases>
+    <costStuffCount>8</costStuffCount>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <stuffCategories Inherit="False">
+      <li>Woody</li>
+      <li>Stony</li>
+      <li>Bricks</li>
+    </stuffCategories>
+    <blockWind>false</blockWind>
+    <fillPercent>0.7</fillPercent>
+    <blockLight>false</blockLight>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_DiagonalEmbrasure</defName>
+  <description>A diagonal wall with a firing port. Use for walls that are 1-tile thick.</description>
+  <label>dia. embrasure (thin)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/DiagonalWall</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/DiagonalWall/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/DiagonalWall/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/DiagonalWall/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/DiagonalWall/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_ConnectorEmbrasureR</defName>
+  <description>Gives a smoother connection between a diagonal wall and normal wall. Has a firing port.</description>
+  <label>connector emb. (right)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/ConnectorWallR</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/ConnectorWallR/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/ConnectorWallR/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/ConnectorWallR/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/ConnectorWallR/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_ConnectorEmbrasureL</defName>
+  <description>Gives a smoother connection between a diagonal wall and normal wall. Has a firing port.</description>
+  <label>connector emb. (left)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/ConnectorWallL</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/ConnectorWallL/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/ConnectorWallL/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/ConnectorWallL/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/ConnectorWallL/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_FilledEmbrasure</defName>
+  <description>A diagonal embrasure with the corner filled in. Use for walls that are more than 1 tile thick.</description>
+  <label>dia. embrasure (thick)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/FilledWall</texPath>
+    <linkType>Basic</linkType>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/FilledWall/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/FilledWall/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FilledWall/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FilledWall/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_EmbrasureFillingA</defName>
+  <description>Place inside thick walls to fix texture issues. Hollow, can be shot through.</description>
+  <label>emb. filling 1</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/FillingA</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/FillingA/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/FillingA/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FillingA/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FillingA/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_EmbrasureFillingB</defName>
+  <description>Place inside thick walls to fix texture issues. Hollow, can be shot through.</description>
+  <label>emb. filling 2</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/FillingB</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/FillingB/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/FillingB/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FillingB/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FillingB/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalEmbrasureBase">
+  <defName>rgh_EmbrasureFillingC</defName>
+  <description>Place inside thick walls to fix texture issues. Hollow, can be shot through.</description>
+  <label>emb. filling 3</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Embrasures/FillingC</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Embrasures/FillingC/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Embrasures/FillingC/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FillingC/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/Embrasures/FillingC/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+
+</Defs>

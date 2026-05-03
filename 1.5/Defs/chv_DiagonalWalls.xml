@@ -51,6 +51,7 @@
       <li>Metallic</li>
       <li>Woody</li>
       <li>Stony</li>
+      <li>Bricks</li>
     </stuffCategories>
     <building>
       <paintable>true</paintable>
@@ -453,6 +454,7 @@
       <li>Metallic</li>
       <li>Woody</li>
       <li>Stony</li>
+      <li>Bricks</li>
     </stuffCategories>
     <building>
       <isInert>true</isInert>

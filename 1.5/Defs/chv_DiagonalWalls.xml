@@ -323,11 +323,6 @@
         <texPath>DiagonalRim/PowerConduit/PowerConduit_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
-    <!-- Force Wire 1 (HSK PowerConduit pattern). Without this the def shows
-         as needing Steel/Magnetite due to inheritance edge case. -->
-    <costList>
-      <Wire>1</Wire>
-    </costList>
   </ThingDef>
 
 

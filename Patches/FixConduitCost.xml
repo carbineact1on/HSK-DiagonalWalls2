@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Force diagonalConduit costList to Wire 1.
+
+    Why a runtime Patch instead of an inline costList override:
+      - Vanilla Core RimWorld PowerConduit ships with costList = Steel 1
+      - HSK Core_SK redefines PowerConduit with costList = Wire 1
+      - When both defs are loaded, RimWorld's costList merging behaves
+        unexpectedly - the inherited final state ends up with Steel + Wire
+        instead of just Wire
+      - Inline child costList override didn't fix it (parent's Steel
+        bled through somehow)
+      - PatchOperationReplace runs AFTER all def merging, forces final
+        state explicitly
+
+    Result: diagonalConduit needs only 1x Wire, matching HSK's
+    vanilla PowerConduit pattern.
+-->
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="diagonalConduit"]/costList</xpath>
+        <value>
+            <costList>
+                <Wire>1</Wire>
+            </costList>
+        </value>
+    </Operation>
+</Patch>

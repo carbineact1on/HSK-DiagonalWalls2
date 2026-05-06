@@ -33,7 +33,13 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="diagonalConduit"]</xpath>
         <value>
-            <costList>
+            <!-- Inherit="False" is critical: <costList> is a List<ThingDefCountClass>
+                 and RimWorld merges child lists into parent lists by default. Without
+                 Inherit="False", our injected Wire 1 was appended to parent
+                 PowerConduit's Magnetite 1 - bill ended up at "1x Magnetite + 1x Wire".
+                 Inherit="False" tells the def loader to drop the inherited list entirely
+                 and use only our value. -->
+            <costList Inherit="False">
                 <Wire>1</Wire>
             </costList>
         </value>

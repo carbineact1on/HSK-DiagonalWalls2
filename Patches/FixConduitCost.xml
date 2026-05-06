@@ -2,23 +2,36 @@
 <!--
     Force diagonalConduit costList to Wire 1.
 
-    Why a runtime Patch instead of an inline costList override:
-      - Vanilla Core RimWorld PowerConduit ships with costList = Steel 1
-      - HSK Core_SK redefines PowerConduit with costList = Wire 1
-      - When both defs are loaded, RimWorld's costList merging behaves
-        unexpectedly - the inherited final state ends up with Steel + Wire
-        instead of just Wire
-      - Inline child costList override didn't fix it (parent's Steel
-        bled through somehow)
-      - PatchOperationReplace runs AFTER all def merging, forces final
-        state explicitly
+    Why this needs a Patch (not an inline override):
+      - diagonalConduit's def has NO inline <costList> - it inherits
+        from ParentName="PowerConduit"
+      - HSK Core_SK's PowerConduit costList uses Magnetite (raw ore),
+        which bleeds through to diagonalConduit at inheritance resolution
+      - PatchOperationReplace on /costList silently no-ops because the
+        child XML has no costList node before inheritance runs
+      - Solution: PatchOperationAdd injects an explicit <costList> on the
+        child def, which then takes precedence over inherited values
 
-    Result: diagonalConduit needs only 1x Wire, matching HSK's
-    vanilla PowerConduit pattern.
+    Result: diagonalConduit needs only 1x Wire (matches the standard
+    HSK Wire-based conduit cost; Wire is crafted from Copper at the
+    Wire Drawing Bench).
+
+    Sequence with Test+Invert: only Add when no costList exists. Makes
+    the patch idempotent and survives if HSK's PowerConduit gains an
+    inline costList override on diagonalConduit in a future update.
 -->
 <Patch>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="diagonalConduit"]/costList</xpath>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <!-- If a costList already exists (future-proof), wipe it first -->
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="diagonalConduit"]/costList</xpath>
+            </li>
+        </operations>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="diagonalConduit"]</xpath>
         <value>
             <costList>
                 <Wire>1</Wire>

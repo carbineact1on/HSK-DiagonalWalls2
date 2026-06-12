@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Force diagonalConduit costList to Wire 1.
-
-    Why this needs a Patch (not an inline override):
-      - diagonalConduit's def has NO inline <costList> - it inherits
-        from ParentName="PowerConduit"
-      - HSK Core_SK's PowerConduit costList uses Magnetite (raw ore),
-        which bleeds through to diagonalConduit at inheritance resolution
-      - PatchOperationReplace on /costList silently no-ops because the
-        child XML has no costList node before inheritance runs
-      - Solution: PatchOperationAdd injects an explicit <costList> on the
-        child def, which then takes precedence over inherited values
-
-    Result: diagonalConduit needs only 1x Wire (matches the standard
-    HSK Wire-based conduit cost; Wire is crafted from Copper at the
-    Wire Drawing Bench).
-
-    Sequence with Test+Invert: only Add when no costList exists. Makes
-    the patch idempotent and survives if HSK's PowerConduit gains an
-    inline costList override on diagonalConduit in a future update.
--->
+<!-- Force diagonalConduit costList to Wire 1 -->
 <Patch>
     <Operation Class="PatchOperationSequence">
         <success>Always</success>
@@ -33,12 +13,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="diagonalConduit"]</xpath>
         <value>
-            <!-- Inherit="False" is critical: <costList> is a List<ThingDefCountClass>
-                 and RimWorld merges child lists into parent lists by default. Without
-                 Inherit="False", our injected Wire 1 was appended to parent
-                 PowerConduit's Magnetite 1 - bill ended up at "1x Magnetite + 1x Wire".
-                 Inherit="False" tells the def loader to drop the inherited list entirely
-                 and use only our value. -->
+<!-- Inherit="False" is critical: <costList> is a List<ThingDefCountClass> -->
             <costList Inherit="False">
                 <Wire>1</Wire>
             </costList>
